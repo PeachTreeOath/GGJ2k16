@@ -14,21 +14,23 @@ public class GameManagerScript : MonoBehaviour {
 
 	private ApprovalScript approval;
 	private Text clock;
-	//string[] AsianTeaCeremonySolution = new string[4]; 
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		approval = GameObject.Find ("ApprovalPrefab").GetComponent<ApprovalScript> ();
 		clock = GameObject.Find ("Clock").GetComponent<Text> ();
 	}
 
-	public float GameLength(){
+	public float GameLength ()
+	{
 		return gameLength; 
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		UpdateClock ();
 
 		levelTime += Time.deltaTime; 
@@ -47,10 +49,11 @@ public class GameManagerScript : MonoBehaviour {
 	}
 
 
-	void UpdateClock(){
+	void UpdateClock ()
+	{
 		timeOfDay = levelTime / gameLength * 86400f;
-		hours = (int) (timeOfDay / 3600) % 24;
-		minutes = (int) (timeOfDay % 3600)/60;
+		hours = (int)(timeOfDay / 3600) % 24;
+		minutes = (int)(timeOfDay % 3600) / 60;
 
 		if (minutes < 10) {
 			timeString = hours + ":0" + minutes; 
@@ -60,7 +63,7 @@ public class GameManagerScript : MonoBehaviour {
 		clock.text = timeString;
 		approval.ChangeAmount (timeOfDay / 60);
 	}
-
+	
 }
 
 

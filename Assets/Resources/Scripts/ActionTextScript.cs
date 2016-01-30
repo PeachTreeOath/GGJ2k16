@@ -18,7 +18,7 @@ public class ActionTextScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (currentFadeTime);
+		//Debug.Log (currentFadeTime);
 		currentFadeTime += Time.deltaTime;
 		if (currentFadeTime > textFadeTime) {
 			actionTextObj.color = Color.Lerp(origColor, Color.clear, fadeSpeed * (currentFadeTime - textFadeTime));
