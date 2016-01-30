@@ -1102,6 +1102,10 @@ Prefab:
       propertyPath: targetTime
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: actionText
+      value: You sipped tea out of the kettle.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
@@ -1498,7 +1502,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: actionText
-      value: You wiped your feet!
+      value: You removed your shoes.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}

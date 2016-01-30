@@ -230,6 +230,23 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_PrefabInternal: {fileID: 133703732}
+--- !u!1 &133703734 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 190102, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+  m_PrefabInternal: {fileID: 133703732}
+--- !u!114 &133703735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133703734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f9e33323824374bb6c9e55b5721636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTime: 0
+  actionText: You fired the raygun!
 --- !u!1 &162201802
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b05bf80d26a58a45b0c79008ca9a553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLength: 0
+  actionTextDecay: 2
 --- !u!4 &295429373
 Transform:
   m_ObjectHideFlags: 0
@@ -936,6 +953,10 @@ Prefab:
       propertyPath: m_Size.x
       value: 2.107665
       objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: actionText
+      value: You navigated the spaceship with its console.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
@@ -1286,6 +1307,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 2.0765605
       objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: actionText
+      value: You confirmed the biometrics on the incubator.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
@@ -1376,6 +1401,10 @@ Prefab:
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: actionText
+      value: You examined the abducted human.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
@@ -1471,6 +1500,10 @@ Prefab:
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Offset.x
       value: 0.3048543
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: actionText
+      value: You activated the probe!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
@@ -1592,6 +1625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTime: 0
+  actionText: 
 --- !u!1001 &2036465469
 Prefab:
   m_ObjectHideFlags: 0
