@@ -19,6 +19,8 @@ public class PlayerScript : MonoBehaviour {
 	bool inTimeRange = false; 
 	float levelTime = 0f;
 
+	Animator playerAnimator; 
+
 	private int playerPoints = 0; 
 	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
 
@@ -29,6 +31,7 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
 		body = GetComponent<Rigidbody2D> ();
 		actionTextScript = GameObject.Find ("ActionText").GetComponent<ActionTextScript> ();
+		playerAnimator = this.GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -68,6 +71,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		collided = null;
 		closestInteractiveDistance = 0f; 
+		playerAnimator.runtimeAnimatorController = null; 
 	}
 
 	private void Interact()
@@ -101,34 +105,43 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		if (inTimeRange) {
+
 			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
+
+			if (Application.loadedLevel == 0) {
+				playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController) Resources.Load("Animations/Kimono"); 
+			}else if (Application.loadedLevel == 1) {
+				playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/CaveBody");
+			}
+
+
 
 			switch (collided.name) {
 
 			case "Sink":
 				{
-					transform.localScale *= .5f; 	
+					//transform.localScale *= .5f; 	
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Mat":
 				{
-					transform.localScale *= 1.5f;
+					//transform.localScale *= 1.5f;
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Gong":
 				{
-					transform.localScale *= .3333f;
+					//transform.localScale *= .3333f;
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Kettle": 
 				{
-					transform.localScale *= 2f; 
+					//transform.localScale *= 2f; 
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
