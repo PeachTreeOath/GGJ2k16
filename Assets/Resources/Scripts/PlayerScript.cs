@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour {
 				}
 			case "Mat":
 				{
-					transform.localScale *= 2f;
+					transform.localScale *= 1.5f;
 					break; 
 				}
 			case "Gong":
@@ -98,9 +98,9 @@ public class PlayerScript : MonoBehaviour {
 					transform.localScale *= .3333f;
 					break; 
 				}
-			case "Table": 
+			case "Kettle": 
 				{
-					transform.localScale *= 3f; 
+					transform.localScale *= 2f; 
 					break; 
 				}
 			}
