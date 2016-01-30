@@ -28,9 +28,13 @@ public class PlayerScript : MonoBehaviour {
 		body.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed,Input.GetAxis("Vertical") * speed)); 
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
-
 			//check colliding
 			Interact(); 
+		}
+
+		//check endtime 
+		if (Time.time >= (5f * 60f)) {
+			Application.LoadLevel (1);
 		}
 
 	}
@@ -47,6 +51,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		closestInteractiveDistance = Math.Max(lastClosestInteractiveDistance, currentInteractiveDistance);
+		lastClosestInteractiveDistance = currentInteractiveDistance; 
 
 	}
 
@@ -58,6 +63,9 @@ public class PlayerScript : MonoBehaviour {
 
 	private void Interact()
 	{
+
+		if (collided == null)
+			return; 
 
 		startTargetTime = targetTimeToSeconds (collided.targetTime); 
 		endTargetTime = targetTimeToSeconds (collided.targetTime + timeRange); 
