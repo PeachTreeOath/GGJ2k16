@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour {
 	bool inTimeRange = false; 
 	float levelTime = 0f;
 
-	private int playerPoints = 0; 
+	public int playerPoints = 0; 
 	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
 
 	public float timeRange = .75f; // in hours

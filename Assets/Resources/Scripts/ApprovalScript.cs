@@ -21,12 +21,15 @@ public class ApprovalScript : MonoBehaviour {
 
 	}
 
-	public void ChangeAmount(float elapsedMinutes)
+	public void ChangeAmount(float elapsedMinutes, float addMinutes)
 	{
 		float percent = (1440 - elapsedMinutes) / 1440;
 		if (percent != 0f) {
 			transform.position = new Vector2 (origPos.x + (width / 2 * percent), origPos.y);
 			transform.localScale = new Vector2 (percent, 2); 
+		}
+		if (percent > 0f && addMinutes != 0f) {
+			transform.localScale = new Vector2(percent + addMinutes, 2);
 		}
 	}
 }
