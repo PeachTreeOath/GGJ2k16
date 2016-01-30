@@ -10,7 +10,7 @@ public class Data : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		private var teaRoom = new TeaRoom();
-		teaRoom.textArray = ["Wash Hands", "Remove Shoes", "Eat Meal", "Sound Bell"];
+	//	teaRoom = new TeaRoom();
+	//	teaRoom.textArray = ["Wash Hands", "Remove Shoes", "Eat Meal", "Sound Bell"];
 	}
 }

@@ -18,6 +18,9 @@ public class PlayerScript : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			//check colliding
+
+
+
 			if (collided != null) {
 				transform.localScale *= 2;
 			}
