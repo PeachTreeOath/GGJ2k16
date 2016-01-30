@@ -18,8 +18,24 @@ public class PlayerScript : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
 
-			if (collided != null) {
-				Interact ();
+			//check colliding
+
+			if (collided.name == "Sink") {
+
+				transform.localScale *= .5f; 
+
+			} else if (collided.name == "Mat") {
+
+
+				transform.localScale *= 2f; 
+			} else if (collided.name == "Gong") {
+
+				transform.localScale *= .3333f;
+
+			} else if (collided.name == "Table") {
+				
+				transform.localScale *= 3f; 
+>>>>>>> Stashed changes
 			}
 		}
 
