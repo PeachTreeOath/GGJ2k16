@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour {
 		body.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed,Input.GetAxis("Vertical") * speed)); 
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
+
 			if (collided != null) {
 				Interact ();
 			}
