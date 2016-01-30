@@ -7,6 +7,12 @@ public class PlayerScript : MonoBehaviour {
 	private Rigidbody2D body;
 	public InteractableScript collided;
 
+	int startTargetTime = 0; 
+	int endTargetTime = 0; 
+	bool inTimeRange = false; 
+
+	public float timeRange = .25f; // in hours
+
 	// Use this for initialization
 	void Start () {
 		body = GetComponent<Rigidbody2D> ();
@@ -39,32 +45,51 @@ public class PlayerScript : MonoBehaviour {
 
 	private void Interact()
 	{
-		/*switch(collided.name)
-		{
-			case "sink":
-			{
-				break;
-			}
-		}*/
 
+		startTargetTime = targetTimeToSeconds (collided.targetTime); 
+		endTargetTime = targetTimeToSeconds (collided.targetTime + timeRange); 
 
-		if (collided.name == "Sink") {
-
-			transform.localScale *= .5f; 
-
-		} else if (collided.name == "Mat") {
-
-
-			transform.localScale *= 2f; 
-
-		} else if (collided.name == "Gong") {
-
-			transform.localScale *= .3333f;
-
-		} else if (collided.name == "Table") {
-
-			transform.localScale *= 3f; 
-
+		if (Time.time > startTargetTime && Time.time < endTargetTime) {
+			inTimeRange = true; 
+		} else {
+			inTimeRange = false; 
 		}
+
+		if (inTimeRange) {
+
+			switch (collided.name) {
+
+			case "Sink":
+				{
+					transform.localScale *= .5f; 	
+					break; 
+				}
+			case "Mat":
+				{
+					transform.localScale *= 2f;
+					break; 
+				}
+			case "Gong":
+				{
+					transform.localScale *= .3333f;
+					break; 
+				}
+			case "Table": 
+				{
+					transform.localScale *= 3f; 
+					break; 
+				}
+			}
+		} else {
+
+			Debug.Log ("You're out of the time range.");
+		}
+	}
+
+
+
+	int targetTimeToSeconds(float targetHour){
+
+		return (int) (targetHour * 3600f); 
 	}
 }

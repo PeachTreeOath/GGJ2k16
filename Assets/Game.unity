@@ -355,6 +355,18 @@ Prefab:
       propertyPath: m_Name
       value: Gong
       objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: startTimeRange
+      value: 3001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: endTimeRange
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: targetTime
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
@@ -495,6 +507,18 @@ Prefab:
     - target: {fileID: 190102, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Name
       value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: startTimeRange
+      value: 2001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: endTimeRange
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: targetTime
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
@@ -674,6 +698,14 @@ Prefab:
       propertyPath: m_Name
       value: Mat
       objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: endTimeRange
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: targetTime
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
@@ -723,6 +755,18 @@ Prefab:
     - target: {fileID: 190102, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Name
       value: Sink
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: startTimeRange
+      value: 1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: endTimeRange
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: targetTime
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
