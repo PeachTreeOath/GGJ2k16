@@ -12,10 +12,10 @@ public class PlayerScript : MonoBehaviour {
 	private float lastClosestInteractiveDistance;
 	public bool checkTime; 
 
-	int startTargetTime = 0; 
-	int endTargetTimePerfect = 0;
-	int endTargetTimeGreat = 0; 
-	int endTargetTimeGood; 
+	float startTargetTime = 0f; 
+	float endTargetTimePerfect = 0f;
+	float endTargetTimeGreat = 0f; 
+	float endTargetTimeGood = 0f; 
 	bool inTimeRange = false; 
 	float levelTime = 0f;
 
@@ -39,9 +39,9 @@ public class PlayerScript : MonoBehaviour {
 			//check colliding
 			Interact(); 
 		}
-			
+
 		levelTime += Time.deltaTime; 
-			 
+
 	}
 
 	int GetPlayerPoints(){
@@ -83,102 +83,23 @@ public class PlayerScript : MonoBehaviour {
 
 		int AwardPoints = 0; 
 
-		if (checkTime) {
-
-			inTimeRange = true; 
-			if (levelTime > startTargetTime &&  levelTime < endTargetTimePerfect) {
-				AwardPoints = (int) pointAwards.Perfect; 
-			} else if (levelTime > startTargetTime && levelTime < endTargetTimeGreat) {
-				AwardPoints = (int) pointAwards.Great; 
-			}else if (levelTime > startTargetTime && levelTime < endTargetTimeGood){
-				AwardPoints = (int) pointAwards.Good; 
-			} else {
-				inTimeRange = false; 
-			}
-
+		inTimeRange = true; 
+		if (levelTime > startTargetTime &&  levelTime < endTargetTimePerfect) {
+			AwardPoints = (int) pointAwards.Perfect; 
+		} else if (levelTime > startTargetTime && levelTime < endTargetTimeGreat) {
+			AwardPoints = (int) pointAwards.Great; 
+		}else if (levelTime > startTargetTime && levelTime < endTargetTimeGood){
+			AwardPoints = (int) pointAwards.Good; 
 		} else {
-			inTimeRange = true; 
+			inTimeRange = false; 
 		}
+
 
 		if (inTimeRange) {
 			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
 			playerPoints += AwardPoints;
 			actionTextScript.ShowText(actionText);
-			/*switch (collided.name) {
 
-			case "Sink":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Mat":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Gong":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Kettle": 
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "SticksTrigger":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Bunny": 
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "KnifeTrigger":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Beartrap":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Console":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "RayGunTrigger": 
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Human":
-				{
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			case "Probe":
-				{	
-					playerPoints += AwardPoints;
-					actionTextScript.ShowText(actionText);
-					break; 
-				}
-			}*/
 		} else {
 
 			Debug.Log ("You're out of the time range.");
@@ -187,9 +108,9 @@ public class PlayerScript : MonoBehaviour {
 
 
 
-	int targetTimeToSeconds(float targetHour){
-
-		return (int) (targetHour * 3600f); 
+	float targetTimeToSeconds(float targetHour){
+		GameManagerScript gamemanagerscript = GameObject.Find ("GameManager").GetComponent<GameManagerScript> ();
+		return (float) (targetHour/24 * gamemanagerscript.GetGameLength()); 
 	}
 
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour {
 
 	float timeOfDay = 0f; 
-	float gameLength = 1f*10f; 
+	float gameLength = 1f*60f; 
 	int hours = 0; 
 	int minutes = 0; 
 	string timeString = ""; 
@@ -23,7 +23,7 @@ public class GameManagerScript : MonoBehaviour {
 		clock = GameObject.Find ("Clock").GetComponent<Text> ();
 	}
 
-	public float GameLength ()
+	public float GetGameLength ()
 	{
 		return gameLength; 
 	}
@@ -37,7 +37,7 @@ public class GameManagerScript : MonoBehaviour {
 
 		//check endtime 
 		if (levelTime >= (gameLength)) {
-		
+
 			if (Application.loadedLevel == 0) {
 				Application.LoadLevel (1);
 			} else if (Application.loadedLevel == 1) {
@@ -61,9 +61,10 @@ public class GameManagerScript : MonoBehaviour {
 			timeString = hours + ":" + minutes; 
 		}
 		clock.text = timeString;
-		approval.ChangeAmount (timeOfDay / 60, 0);
+		PlayerScript playerscript = GameObject.Find ("Player").GetComponent<PlayerScript>();
+		approval.ChangeAmount (timeOfDay / 60f, playerscript.playerPoints);
 	}
-	
+
 }
 
 
