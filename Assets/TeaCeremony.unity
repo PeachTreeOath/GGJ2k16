@@ -272,7 +272,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 182576, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
       propertyPath: m_Name
-      value: Player
+      value: PlayerPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 5839944, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
       propertyPath: m_Radius
