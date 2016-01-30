@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System; 
 
 public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	private Rigidbody2D body;
 	public InteractableScript collided;
+	private Collider2D[] colliders;
+	float closestInteractiveDistance; 
+	private float lastClosestInteractiveDistance;
+	public bool checkTime; 
 
 	int startTargetTime = 0; 
 	int endTargetTime = 0; 
@@ -26,21 +31,29 @@ public class PlayerScript : MonoBehaviour {
 
 			//check colliding
 			Interact(); 
-
-
-
 		}
 
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
+	void OnTriggerStay2D(Collider2D col)
 	{
-		collided = col.gameObject.GetComponent<InteractableScript>();
+		float currentInteractiveDistance = Vector2.Distance( this.transform.position, col.gameObject.transform.position); 
+
+
+		if (closestInteractiveDistance == 0) {
+			collided = col.gameObject.GetComponent<InteractableScript> ();
+		} else if (currentInteractiveDistance < closestInteractiveDistance) {
+			collided = col.gameObject.GetComponent<InteractableScript> ();
+		}
+
+		closestInteractiveDistance = Math.Max(lastClosestInteractiveDistance, currentInteractiveDistance);
+
 	}
 
 	void OnTriggerExit2D(Collider2D col)
 	{
 		collided = null;
+		closestInteractiveDistance = 0f; 
 	}
 
 	private void Interact()
@@ -49,12 +62,15 @@ public class PlayerScript : MonoBehaviour {
 		startTargetTime = targetTimeToSeconds (collided.targetTime); 
 		endTargetTime = targetTimeToSeconds (collided.targetTime + timeRange); 
 
-		if (Time.time > startTargetTime && Time.time < endTargetTime) {
-			inTimeRange = true; 
+		if (checkTime) {
+			if (Time.time > startTargetTime && Time.time < endTargetTime) {
+				inTimeRange = true; 
+			} else {
+				inTimeRange = false; 
+			}
 		} else {
-			inTimeRange = false; 
+			inTimeRange = true; 
 		}
-
 		if (inTimeRange) {
 
 			switch (collided.name) {
