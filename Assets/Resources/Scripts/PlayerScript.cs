@@ -13,10 +13,15 @@ public class PlayerScript : MonoBehaviour {
 	public bool checkTime; 
 
 	int startTargetTime = 0; 
-	int endTargetTime = 0; 
+	int endTargetTimePerfect = 0;
+	int endTargetTimeGreat = 0; 
+	int endTargetTimeGood; 
 	bool inTimeRange = false; 
 
-	public float timeRange = .25f; // in hours
+	private int playerPoints = 0; 
+	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
+
+	public float timeRange = .75f; // in hours
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +47,10 @@ public class PlayerScript : MonoBehaviour {
 			}
 		}
 
+	}
+
+	int GetPlayerPoints(){
+		return playerPoints; 
 	}
 
 	void OnTriggerStay2D(Collider2D col)
@@ -73,17 +82,29 @@ public class PlayerScript : MonoBehaviour {
 			return; 
 
 		startTargetTime = targetTimeToSeconds (collided.targetTime); 
-		endTargetTime = targetTimeToSeconds (collided.targetTime + timeRange); 
+		endTargetTimePerfect = targetTimeToSeconds (collided.targetTime + timeRange/3);
+		endTargetTimeGreat = targetTimeToSeconds (collided.targetTime + timeRange * 2 / 3);
+		endTargetTimeGood = targetTimeToSeconds (collided.targetTime + timeRange);
+
+		int AwardPoints = 0; 
 
 		if (checkTime) {
-			if (Time.time > startTargetTime && Time.time < endTargetTime) {
-				inTimeRange = true; 
+
+			inTimeRange = true; 
+			if (Time.time > startTargetTime && Time.time < endTargetTimePerfect) {
+				AwardPoints = (int) pointAwards.Perfect; 
+			} else if (Time.time > startTargetTime && Time.time < endTargetTimeGreat) {
+				AwardPoints = (int) pointAwards.Great; 
+			}else if (Time.time > startTargetTime && Time.time < endTargetTimeGood){
+				AwardPoints = (int) pointAwards.Good; 
 			} else {
 				inTimeRange = false; 
 			}
+
 		} else {
 			inTimeRange = true; 
 		}
+
 		if (inTimeRange) {
 
 			Debug.Log (collided.name); 
@@ -93,41 +114,49 @@ public class PlayerScript : MonoBehaviour {
 			case "Sink":
 				{
 					transform.localScale *= .5f; 	
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "Mat":
 				{
 					transform.localScale *= 1.5f;
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "Gong":
 				{
 					transform.localScale *= .3333f;
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "Kettle": 
 				{
 					transform.localScale *= 2f; 
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "SticksTrigger":
 				{
 					transform.localScale *= .66f; 	
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "Bunny": 
 				{
-					transform.localScale *= 1.5f; 	
+					transform.localScale *= 1.5f; 
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "KnifeTrigger":
 				{
-					transform.localScale *= .33f; 	
+					transform.localScale *= .33f; 
+					playerPoints += AwardPoints;
 					break; 
 				}
 			case "Beartrap":
 				{
 					transform.localScale *= 2f; 	
+					playerPoints += AwardPoints;
 					break; 
 				}
 			}
@@ -143,4 +172,6 @@ public class PlayerScript : MonoBehaviour {
 
 		return (int) (targetHour * 3600f); 
 	}
+
+
 }
