@@ -86,13 +86,12 @@ public class PlayerScript : MonoBehaviour {
 		}
 		if (inTimeRange) {
 
-			Debug.Log (collided.name); 
+			collided.gameObject.GetComponent<InteractableScript> ().ShowText();
 			switch (collided.name) {
-
 
 			case "Sink":
 				{
-					transform.localScale *= .5f; 	
+					transform.localScale *= .5f;
 					break; 
 				}
 			case "Mat":

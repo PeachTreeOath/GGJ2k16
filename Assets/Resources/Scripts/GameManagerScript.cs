@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour {
 	int hours = 0; 
 	int minutes = 0; 
 	string timeString = ""; 
+	public float actionTextDecay = 2f;
 
 	private ApprovalScript approval;
 	private Text clock;
