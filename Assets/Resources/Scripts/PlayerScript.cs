@@ -107,82 +107,74 @@ public class PlayerScript : MonoBehaviour {
 
 			case "Sink":
 				{
-					transform.localScale *= .5f; 	
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Mat":
 				{
-					transform.localScale *= 1.5f;
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Gong":
 				{
-					transform.localScale *= .3333f;
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Kettle": 
 				{
-					transform.localScale *= 2f; 
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "SticksTrigger":
 				{
-					transform.localScale *= .66f; 	
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Bunny": 
 				{
-					transform.localScale *= 1.5f; 
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "KnifeTrigger":
 				{
-					transform.localScale *= .33f; 
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Beartrap":
 				{
-					transform.localScale *= 2f; 	
 					playerPoints += AwardPoints;
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Console":
 				{
-					transform.localScale *= .66f; 	
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "RayGunTrigger": 
 				{
-					transform.localScale *= 1.5f; 
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Human":
 				{
-					transform.localScale *= .33f; 
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Probe":
-				{
-					transform.localScale *= 2f; 	
+				{	
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			}
