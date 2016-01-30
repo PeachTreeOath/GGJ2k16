@@ -20,7 +20,7 @@ public class GameManagerScript : MonoBehaviour {
 	void Start () {
 		approval = GameObject.Find ("ApprovalPrefab").GetComponent<ApprovalScript> ();
 		clock = GameObject.Find ("Clock").GetComponent<Text> ();
-
+		GameObject.Find ("ActionText").GetComponent<Text> ().color = Color.clear;
 		/*AsianTeaCeremonySolution[0] = "Mat";
 		AsianTeaCeremonySolution[1] = "Sink";
 		AsianTeaCeremonySolution[2] = "Table";

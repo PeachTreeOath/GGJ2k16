@@ -22,10 +22,12 @@ public class PlayerScript : MonoBehaviour {
 	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
 
 	public float timeRange = .75f; // in hours
+	private ActionTextScript actionTextScript;
 
 	// Use this for initialization
 	void Start () {
 		body = GetComponent<Rigidbody2D> ();
+		actionTextScript = GameObject.Find ("ActionText").GetComponent<ActionTextScript> ();
 	}
 
 	// Update is called once per frame
@@ -106,57 +108,64 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		if (inTimeRange) {
+			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
 
-			collided.gameObject.GetComponent<InteractableScript> ().ShowText();
 			switch (collided.name) {
 
 			case "Sink":
 				{
 					transform.localScale *= .5f; 	
 					playerPoints += AwardPoints;
-
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Mat":
 				{
 					transform.localScale *= 1.5f;
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Gong":
 				{
 					transform.localScale *= .3333f;
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Kettle": 
 				{
 					transform.localScale *= 2f; 
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "SticksTrigger":
 				{
 					transform.localScale *= .66f; 	
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Bunny": 
 				{
 					transform.localScale *= 1.5f; 
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "KnifeTrigger":
 				{
 					transform.localScale *= .33f; 
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			case "Beartrap":
 				{
 					transform.localScale *= 2f; 	
 					playerPoints += AwardPoints;
+					actionTextScript.ShowText(actionText);
 					break; 
 				}
 			}
