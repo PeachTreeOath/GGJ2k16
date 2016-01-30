@@ -33,8 +33,13 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		//check endtime 
-		if (Time.time >= (5f * 60f)) {
-			Application.LoadLevel (1);
+		if (Time.time >= (5f * 6f)) {
+
+			if (Application.loadedLevel == 0) {
+				Application.LoadLevel (1);
+			}else if (Application.loadedLevel == 1) {
+				Application.LoadLevel (2);
+			}
 		}
 
 	}
@@ -101,6 +106,26 @@ public class PlayerScript : MonoBehaviour {
 			case "Kettle": 
 				{
 					transform.localScale *= 2f; 
+					break; 
+				}
+			case "Sticks":
+				{
+					transform.localScale *= .66f; 	
+					break; 
+				}
+			case "Bunny": 
+				{
+					transform.localScale *= 1.5f; 	
+					break; 
+				}
+			case "Meat":
+				{
+					transform.localScale *= .33f; 	
+					break; 
+				}
+			case "Cave":
+				{
+					transform.localScale *= .2f; 	
 					break; 
 				}
 			}
