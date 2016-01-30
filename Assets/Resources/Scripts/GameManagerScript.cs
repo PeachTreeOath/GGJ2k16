@@ -61,7 +61,7 @@ public class GameManagerScript : MonoBehaviour {
 			timeString = hours + ":" + minutes; 
 		}
 		clock.text = timeString;
-		approval.ChangeAmount (timeOfDay / 60);
+		approval.ChangeAmount (timeOfDay / 60, 0);
 	}
 	
 }
