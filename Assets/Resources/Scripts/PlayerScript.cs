@@ -102,8 +102,9 @@ public class PlayerScript : MonoBehaviour {
 
 		if (inTimeRange) {
 			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
-
-			switch (collided.name) {
+			playerPoints += AwardPoints;
+			actionTextScript.ShowText(actionText);
+			/*switch (collided.name) {
 
 			case "Sink":
 				{
@@ -177,7 +178,7 @@ public class PlayerScript : MonoBehaviour {
 					actionTextScript.ShowText(actionText);
 					break; 
 				}
-			}
+			}*/
 		} else {
 
 			Debug.Log ("You're out of the time range.");
