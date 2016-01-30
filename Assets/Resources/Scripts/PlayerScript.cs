@@ -33,7 +33,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		//check endtime 
-		if (Time.time >= (5f * 6f)) {
+		if (Time.time >= (5f * 60f)) {
 
 			if (Application.loadedLevel == 0) {
 				Application.LoadLevel (1);
@@ -86,7 +86,9 @@ public class PlayerScript : MonoBehaviour {
 		}
 		if (inTimeRange) {
 
+			Debug.Log (collided.name); 
 			switch (collided.name) {
+
 
 			case "Sink":
 				{
@@ -108,7 +110,7 @@ public class PlayerScript : MonoBehaviour {
 					transform.localScale *= 2f; 
 					break; 
 				}
-			case "Sticks":
+			case "SticksTrigger":
 				{
 					transform.localScale *= .66f; 	
 					break; 
@@ -118,14 +120,14 @@ public class PlayerScript : MonoBehaviour {
 					transform.localScale *= 1.5f; 	
 					break; 
 				}
-			case "Meat":
+			case "KnifeTrigger":
 				{
 					transform.localScale *= .33f; 	
 					break; 
 				}
-			case "Cave":
+			case "Beartrap":
 				{
-					transform.localScale *= .2f; 	
+					transform.localScale *= 2f; 	
 					break; 
 				}
 			}
