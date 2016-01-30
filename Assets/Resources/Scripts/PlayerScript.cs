@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	private Rigidbody2D body;
-	private InteractableScript collided;
+	public InteractableScript collided;
 
 	// Use this for initialization
 	void Start () {
@@ -19,24 +19,10 @@ public class PlayerScript : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 
 			//check colliding
-
-			if (collided.name == "Sink") {
-
-				transform.localScale *= .5f; 
-
-			} else if (collided.name == "Mat") {
+			Interact(); 
 
 
-				transform.localScale *= 2f; 
-			} else if (collided.name == "Gong") {
 
-				transform.localScale *= .3333f;
-
-			} else if (collided.name == "Table") {
-				
-				transform.localScale *= 3f; 
->>>>>>> Stashed changes
-			}
 		}
 
 	}
@@ -53,12 +39,32 @@ public class PlayerScript : MonoBehaviour {
 
 	private void Interact()
 	{
-		switch(collided.name)
+		/*switch(collided.name)
 		{
 			case "sink":
 			{
 				break;
 			}
+		}*/
+
+
+		if (collided.name == "Sink") {
+
+			transform.localScale *= .5f; 
+
+		} else if (collided.name == "Mat") {
+
+
+			transform.localScale *= 2f; 
+
+		} else if (collided.name == "Gong") {
+
+			transform.localScale *= .3333f;
+
+		} else if (collided.name == "Table") {
+
+			transform.localScale *= 3f; 
+
 		}
 	}
 }
