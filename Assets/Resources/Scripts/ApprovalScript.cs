@@ -12,6 +12,8 @@ public class ApprovalScript : MonoBehaviour {
 	void Start () {
 		origPos = transform.position;
 		width = GetComponent<SpriteRenderer> ().bounds.size.x;
+
+
 	}
 	
 	// Update is called once per frame
