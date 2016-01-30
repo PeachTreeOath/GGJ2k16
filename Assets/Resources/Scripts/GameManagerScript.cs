@@ -2,22 +2,18 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameManagerScript : MonoBehaviour
-{
+public class GameManagerScript : MonoBehaviour {
 
-	float timeOfDay = 0f;
-	float gameLength = 1f * 10f;
-	int hours = 0;
-	int minutes = 0;
-	string timeString = "";
-
+	float timeOfDay = 0f; 
+	float gameLength = 1f*60f; 
+	int hours = 0; 
+	int minutes = 0; 
+	string timeString = ""; 
 	float levelTime = 0f;
 	public float actionTextDecay = 2f;
 
-
 	private ApprovalScript approval;
 	private Text clock;
-	//string[] AsianTeaCeremonySolution = new string[4];
 
 
 	// Use this for initialization
@@ -25,10 +21,9 @@ public class GameManagerScript : MonoBehaviour
 	{
 		approval = GameObject.Find ("ApprovalPrefab").GetComponent<ApprovalScript> ();
 		clock = GameObject.Find ("Clock").GetComponent<Text> ();
-
 	}
 
-	public float GameLength ()
+	public float GetGameLength ()
 	{
 		return gameLength; 
 	}
@@ -42,7 +37,7 @@ public class GameManagerScript : MonoBehaviour
 
 		//check endtime 
 		if (levelTime >= (gameLength)) {
-		
+
 			if (Application.loadedLevel == 0) {
 				Application.LoadLevel (1);
 			} else if (Application.loadedLevel == 1) {
@@ -66,7 +61,8 @@ public class GameManagerScript : MonoBehaviour
 			timeString = hours + ":" + minutes; 
 		}
 		clock.text = timeString;
-		approval.ChangeAmount (timeOfDay / 60);
+		PlayerScript playerscript = GameObject.Find ("PlayerPrefab").GetComponent<PlayerScript>();
+		approval.ChangeAmount (timeOfDay / 60f, playerscript.playerPoints);
 	}
 
 }
