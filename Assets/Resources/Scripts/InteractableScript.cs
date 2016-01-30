@@ -3,6 +3,8 @@ using System.Collections;
 
 public class InteractableScript : MonoBehaviour {
 
+	public string name;
+
 	// Use this for initialization
 	void Start () {
 	

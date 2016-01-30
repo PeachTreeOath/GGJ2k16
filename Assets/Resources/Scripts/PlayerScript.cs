@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	private Rigidbody2D body;
-	private GameObject collided;
+	private InteractableScript collided;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +17,8 @@ public class PlayerScript : MonoBehaviour {
 		body.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed,Input.GetAxis("Vertical") * speed)); 
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			//check colliding
 			if (collided != null) {
-				transform.localScale *= 2;
+				Interact ();
 			}
 		}
 
@@ -27,11 +26,22 @@ public class PlayerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		collided = col.gameObject;
+		collided = col.gameObject.GetComponent<InteractableScript>();
 	}
 
 	void OnTriggerExit2D(Collider2D col)
 	{
 		collided = null;
+	}
+
+	private void Interact()
+	{
+		switch(collided.name)
+		{
+			case "sink":
+			{
+				break;
+			}
+		}
 	}
 }
