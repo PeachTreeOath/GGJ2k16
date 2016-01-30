@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/RightofPassage.unity
   - enabled: 1
     path: Assets/SpaceShip.unity
+  - enabled: 1
+    path: Assets/GameOver.unity

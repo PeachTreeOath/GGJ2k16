@@ -5,10 +5,11 @@ using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour {
 
 	float timeOfDay = 0f; 
-	float gameLength = 5f*60f; 
+	float gameLength = 1f*10f; 
 	int hours = 0; 
 	int minutes = 0; 
 	string timeString = ""; 
+	float levelTime = 0f;
 
 	private ApprovalScript approval;
 	private Text clock;
@@ -19,22 +20,34 @@ public class GameManagerScript : MonoBehaviour {
 	void Start () {
 		approval = GameObject.Find ("ApprovalPrefab").GetComponent<ApprovalScript> ();
 		clock = GameObject.Find ("Clock").GetComponent<Text> ();
-
-		/*AsianTeaCeremonySolution[0] = "Mat";
-		AsianTeaCeremonySolution[1] = "Sink";
-		AsianTeaCeremonySolution[2] = "Table";
-		AsianTeaCeremonySolution[3] = "Gong";*/
-
 	}
-	
+
+	public float GameLength(){
+		return gameLength; 
+	}
+
 	// Update is called once per frame
 	void Update () {
 		UpdateClock ();
+
+		levelTime += Time.deltaTime; 
+
+		//check endtime 
+		if (levelTime >= (gameLength)) {
+		
+			if (Application.loadedLevel == 0) {
+				Application.LoadLevel (1);
+			} else if (Application.loadedLevel == 1) {
+				Application.LoadLevel (2);
+			} else if (Application.loadedLevel == 2) {
+				Application.LoadLevel (3);
+			}
+		}
 	}
 
 
 	void UpdateClock(){
-		timeOfDay = Time.time / gameLength * 86400f;
+		timeOfDay = levelTime / gameLength * 86400f;
 		hours = (int) (timeOfDay / 3600) % 24;
 		minutes = (int) (timeOfDay % 3600)/60;
 

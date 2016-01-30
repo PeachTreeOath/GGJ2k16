@@ -24,7 +24,9 @@ public class ApprovalScript : MonoBehaviour {
 	public void ChangeAmount(float elapsedMinutes)
 	{
 		float percent = (1440 - elapsedMinutes) / 1440;
-		transform.position = new Vector2 (origPos.x + (width/2*percent), origPos.y);
-		transform.localScale = new Vector2 (percent, 2); 
+		if (percent != 0f) {
+			transform.position = new Vector2 (origPos.x + (width / 2 * percent), origPos.y);
+			transform.localScale = new Vector2 (percent, 2); 
+		}
 	}
 }

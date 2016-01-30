@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour {
 	int endTargetTimeGreat = 0; 
 	int endTargetTimeGood; 
 	bool inTimeRange = false; 
+	float levelTime = 0f;
 
 	private int playerPoints = 0; 
 	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
@@ -36,17 +37,9 @@ public class PlayerScript : MonoBehaviour {
 			//check colliding
 			Interact(); 
 		}
-
-		//check endtime 
-		if (Time.time >= (5f * 60f)) {
-
-			if (Application.loadedLevel == 0) {
-				Application.LoadLevel (1);
-			}else if (Application.loadedLevel == 1) {
-				Application.LoadLevel (2);
-			}
-		}
-
+			
+		levelTime += Time.deltaTime; 
+			 
 	}
 
 	int GetPlayerPoints(){
@@ -91,11 +84,11 @@ public class PlayerScript : MonoBehaviour {
 		if (checkTime) {
 
 			inTimeRange = true; 
-			if (Time.time > startTargetTime && Time.time < endTargetTimePerfect) {
+			if (levelTime > startTargetTime &&  levelTime < endTargetTimePerfect) {
 				AwardPoints = (int) pointAwards.Perfect; 
-			} else if (Time.time > startTargetTime && Time.time < endTargetTimeGreat) {
+			} else if (levelTime > startTargetTime && levelTime < endTargetTimeGreat) {
 				AwardPoints = (int) pointAwards.Great; 
-			}else if (Time.time > startTargetTime && Time.time < endTargetTimeGood){
+			}else if (levelTime > startTargetTime && levelTime < endTargetTimeGood){
 				AwardPoints = (int) pointAwards.Good; 
 			} else {
 				inTimeRange = false; 
@@ -154,6 +147,30 @@ public class PlayerScript : MonoBehaviour {
 					break; 
 				}
 			case "Beartrap":
+				{
+					transform.localScale *= 2f; 	
+					playerPoints += AwardPoints;
+					break; 
+				}
+			case "Console":
+				{
+					transform.localScale *= .66f; 	
+					playerPoints += AwardPoints;
+					break; 
+				}
+			case "RayGunTrigger": 
+				{
+					transform.localScale *= 1.5f; 
+					playerPoints += AwardPoints;
+					break; 
+				}
+			case "Human":
+				{
+					transform.localScale *= .33f; 
+					playerPoints += AwardPoints;
+					break; 
+				}
+			case "Probe":
 				{
 					transform.localScale *= 2f; 	
 					playerPoints += AwardPoints;
