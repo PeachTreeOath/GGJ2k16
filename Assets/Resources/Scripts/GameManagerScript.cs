@@ -38,12 +38,12 @@ public class GameManagerScript : MonoBehaviour {
 		//check endtime 
 		if (levelTime >= (gameLength)) {
 
-			if (Application.loadedLevel == 0) {
-				Application.LoadLevel (1);
-			} else if (Application.loadedLevel == 1) {
-				Application.LoadLevel (2);
-			} else if (Application.loadedLevel == 2) {
+			if (Application.loadedLevel == 2) {
 				Application.LoadLevel (3);
+			} else if (Application.loadedLevel == 4) {
+				Application.LoadLevel (5);
+			} else if (Application.loadedLevel == 6) {
+				Application.LoadLevel (7);
 			}
 		}
 	}
