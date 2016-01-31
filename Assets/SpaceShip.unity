@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f9e33323824374bb6c9e55b5721636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 1
+  targetTime: 13
   actionText: You fired the raygun!
 --- !u!1 &162201802
 GameObject:
@@ -649,7 +649,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 2
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -687,6 +687,10 @@ Prefab:
     - target: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_LocalScale.x
       value: 1.3906252
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: actionText
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
@@ -915,7 +919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -1388,7 +1392,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 1
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
@@ -1545,7 +1549,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
