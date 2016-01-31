@@ -36,11 +36,11 @@ public class PlayerScript : MonoBehaviour {
 	private float lastActionTime;
 	public float actionCooldown = 2;
 
-	decimal Perfect = 0.25M;
-	decimal Great = 0.1M;
-	decimal Good = 0.05M; 
+	decimal Perfect = 0.4M;
+	decimal Great = 0.25M;
+	decimal Good = 0.15M; 
 
-	public float timeRange = .75f; // in hours
+	public float timeRange = 1f; // in hours
 	private ActionTextScript actionTextScript;
 
 	// Use this for initialization
