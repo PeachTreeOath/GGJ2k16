@@ -616,7 +616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 2
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -1173,11 +1173,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Offset.y
-      value: -0.10929977
+      value: -0.02256176
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Size.y
-      value: 0.36317554
+      value: 0.40172598
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Offset.x
@@ -1341,7 +1341,12 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1462810649 stripped
@@ -1625,7 +1630,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 1
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -1708,11 +1713,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.14
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.48
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1752,7 +1757,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -1765,11 +1770,11 @@ Prefab:
         type: 3}
     - target: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.5399244
+      value: 2.3729851
       objectReference: {fileID: 0}
     - target: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_LocalScale.x
-      value: 3.5158753
+      value: 2.4470272
       objectReference: {fileID: 0}
     - target: {fileID: 21271568, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_SortingOrder
@@ -1777,19 +1782,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Offset.y
-      value: -0.06536882
+      value: -0.07095549
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Size.y
-      value: 0.5479728
+      value: 0.5591462
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Offset.x
-      value: 0.01345431
+      value: 0.008837549
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_Size.x
-      value: 0.57107097
+      value: 0.83884007
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: actionText
