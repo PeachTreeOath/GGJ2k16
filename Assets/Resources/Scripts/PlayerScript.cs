@@ -19,7 +19,9 @@ public class PlayerScript : MonoBehaviour {
 	bool inTimeRange = false; 
 	float levelTime = 0f;
 
+	Animator playerAnimator; 
 	public int playerPoints = 0; 
+
 	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
 
 	public float timeRange = .75f; // in hours
@@ -29,6 +31,7 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
 		body = GetComponent<Rigidbody2D> ();
 		actionTextScript = GameObject.Find ("ActionText").GetComponent<ActionTextScript> ();
+		playerAnimator = this.GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -68,6 +71,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		collided = null;
 		closestInteractiveDistance = 0f; 
+		playerAnimator.runtimeAnimatorController = null; 
 	}
 
 	private void Interact()
@@ -94,12 +98,20 @@ public class PlayerScript : MonoBehaviour {
 			inTimeRange = false; 
 		}
 
+		
+		if (Application.loadedLevel == 0) {
+			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController) Resources.Load("Animations/Kimono"); 
+		}else if (Application.loadedLevel == 1) {
+			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/CaveBody");
+		}
 
 		if (inTimeRange) {
+
 			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
 			playerPoints += AwardPoints;
 			actionTextScript.ShowText(actionText);
 
+				
 		} else {
 
 			Debug.Log ("You're out of the time range.");

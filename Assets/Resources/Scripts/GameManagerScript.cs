@@ -61,7 +61,7 @@ public class GameManagerScript : MonoBehaviour {
 			timeString = hours + ":" + minutes; 
 		}
 		clock.text = timeString;
-		PlayerScript playerscript = GameObject.Find ("Player").GetComponent<PlayerScript>();
+		PlayerScript playerscript = GameObject.Find ("PlayerPrefab").GetComponent<PlayerScript>();
 		approval.ChangeAmount (timeOfDay / 60f, playerscript.playerPoints);
 	}
 

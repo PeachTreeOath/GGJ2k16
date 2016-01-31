@@ -314,6 +314,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 105f06f11eb40a74f96958b77195b936,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 5839944, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
@@ -663,6 +667,23 @@ BoxCollider2D:
   m_Offset: {x: -0.024779081, y: -0.12743531}
   serializedVersion: 2
   m_Size: {x: 0.5022094, y: 0.9168972}
+--- !u!95 &410996659
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 410996657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &437445037 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458282, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
