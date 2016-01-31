@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
 	float closestInteractiveDistance; 
 	private float lastClosestInteractiveDistance;
 	public bool checkTime; 
+	public GameObject head; 
 
 	float startTargetTime = 0f; 
 	float endTargetTimePerfect = 0f;
@@ -18,8 +19,17 @@ public class PlayerScript : MonoBehaviour {
 	float endTargetTimeGood = 0f; 
 	bool inTimeRange = false; 
 	float levelTime = 0f;
+	int level = 0; 
 
 	Animator playerAnimator; 
+	SpriteRenderer playerSpriteRenderer; 
+	SpriteRenderer playerHeadSpriteRenderer; 
+
+	Sprite happyFace; 
+	Sprite frownFace; 
+	Sprite neutralFace; 
+	Sprite neutralBody; 
+
 	public int playerPoints = 0; 
 
 	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
@@ -32,6 +42,27 @@ public class PlayerScript : MonoBehaviour {
 		body = GetComponent<Rigidbody2D> ();
 		actionTextScript = GameObject.Find ("ActionText").GetComponent<ActionTextScript> ();
 		playerAnimator = this.GetComponent<Animator> ();
+		playerSpriteRenderer = this.GetComponent<SpriteRenderer> ();
+		playerHeadSpriteRenderer = head.GetComponent<SpriteRenderer> (); 
+		level = Application.loadedLevel; 
+
+		if (level == 0) {
+			happyFace = Resources.Load <Sprite> ("Images/teahouseplayerhappyhead");
+			frownFace =  Resources.Load <Sprite>("Images/teahouseplayerfrownhead");
+			neutralFace = Resources.Load <Sprite>("Images/teahouseplayerneutralhead");
+			neutralBody = Resources.Load <Sprite>("Images/teahouseplayerbody");
+		} else if (level == 1) {
+			happyFace = Resources.Load <Sprite>("Images/wildernessplayerhappyhead");
+			frownFace = Resources.Load <Sprite>("Images/wildernessplayerfrownhead");
+			neutralFace = Resources.Load <Sprite>("Images/wildernessplayerneutralhead");
+			neutralBody = Resources.Load <Sprite>("Images/wildernessplayerbody");
+		} else if (level == 2) {
+			happyFace = Resources.Load <Sprite>("Images/spaceshipplayerhappyhead");
+			frownFace = Resources.Load <Sprite>("Images/spaceshipplayerfrownhead");
+			neutralFace = Resources.Load <Sprite>("Images/spaceshipplayerneutralhead");
+			neutralBody = Resources.Load <Sprite>("Images/spaceshipplayerbody");
+		}
+		Debug.Log (frownFace); 
 	}
 
 	// Update is called once per frame
@@ -72,6 +103,8 @@ public class PlayerScript : MonoBehaviour {
 		collided = null;
 		closestInteractiveDistance = 0f; 
 		playerAnimator.runtimeAnimatorController = null; 
+		playerHeadSpriteRenderer.sprite = neutralFace;
+		playerSpriteRenderer.sprite = neutralBody; 
 	}
 
 	private void Interact()
@@ -99,10 +132,12 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		
-		if (Application.loadedLevel == 0) {
-			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController) Resources.Load("Animations/Kimono"); 
-		}else if (Application.loadedLevel == 1) {
+		if (level == 0) {
+			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/Kimono"); 
+		} else if (level == 1) {
 			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/CaveBody");
+		} else if (level == 2) {
+			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/AlienBody");
 		}
 
 		if (inTimeRange) {
@@ -110,10 +145,11 @@ public class PlayerScript : MonoBehaviour {
 			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
 			playerPoints += AwardPoints;
 			actionTextScript.ShowText(actionText);
-
+			playerHeadSpriteRenderer.sprite = happyFace;
 				
 		} else {
 
+			playerHeadSpriteRenderer.sprite = frownFace; 
 			Debug.Log ("You're out of the time range.");
 		}
 	}

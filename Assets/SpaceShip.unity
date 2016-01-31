@@ -1047,9 +1047,17 @@ Prefab:
       propertyPath: timeRange
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 11446482, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 1058984366}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1058984366 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 135848, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
+  m_PrefabInternal: {fileID: 1058984365}
 --- !u!1 &1127283666
 GameObject:
   m_ObjectHideFlags: 0
