@@ -30,9 +30,12 @@ public class PlayerScript : MonoBehaviour {
 	Sprite neutralFace; 
 	Sprite neutralBody; 
 
-	public int playerPoints = 0; 
+	public decimal playerPoints = 0M; 
 
-	enum pointAwards {Perfect = 30, Great = 20, Good = 10}; 
+
+	decimal Perfect = 0.25M;
+	decimal Great = 0.1M;
+	decimal Good = 0.05M; 
 
 	public float timeRange = .75f; // in hours
 	private ActionTextScript actionTextScript;
@@ -78,7 +81,7 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-	int GetPlayerPoints(){
+	decimal GetPlayerPoints(){
 		return playerPoints; 
 	}
 
@@ -118,15 +121,15 @@ public class PlayerScript : MonoBehaviour {
 		endTargetTimeGreat = targetTimeToSeconds (collided.targetTime + timeRange * 2 / 3);
 		endTargetTimeGood = targetTimeToSeconds (collided.targetTime + timeRange);
 
-		int AwardPoints = 0; 
+		decimal AwardPoints = 0M; 
 
 		inTimeRange = true; 
 		if (levelTime > startTargetTime &&  levelTime < endTargetTimePerfect) {
-			AwardPoints = (int) pointAwards.Perfect; 
+			AwardPoints = (decimal) Perfect; 
 		} else if (levelTime > startTargetTime && levelTime < endTargetTimeGreat) {
-			AwardPoints = (int) pointAwards.Great; 
+			AwardPoints = (decimal) Great; 
 		}else if (levelTime > startTargetTime && levelTime < endTargetTimeGood){
-			AwardPoints = (int) pointAwards.Good; 
+			AwardPoints = (decimal) Good; 
 		} else {
 			inTimeRange = false; 
 		}
@@ -141,17 +144,16 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		if (inTimeRange) {
-
-			String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
 			playerPoints += AwardPoints;
-			actionTextScript.ShowText(actionText);
 			playerHeadSpriteRenderer.sprite = happyFace;
-				
+
 		} else {
 
 			playerHeadSpriteRenderer.sprite = frownFace; 
 			Debug.Log ("You're out of the time range.");
 		}
+		String actionText = collided.gameObject.GetComponent<InteractableScript> ().actionText;
+		actionTextScript.ShowText(actionText);
 	}
 
 
