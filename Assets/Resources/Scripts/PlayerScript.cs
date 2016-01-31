@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour {
 	bool inTimeRange = false; 
 	float levelTime = 0f;
 	int level = 0; 
+	bool actionAllowed = true;
 
 	Animator playerAnimator; 
 	SpriteRenderer playerSpriteRenderer; 
@@ -32,6 +33,8 @@ public class PlayerScript : MonoBehaviour {
 
 	public decimal playerPoints = 0M; 
 
+	private float lastActionTime;
+	public float actionCooldown = 2;
 
 	decimal Perfect = 0.25M;
 	decimal Great = 0.1M;
@@ -72,11 +75,20 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
 		body.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed,Input.GetAxis("Vertical") * speed)); 
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			//check colliding
-			Interact(); 
+		if (Input.GetKeyDown(KeyCode.Space) && actionAllowed) {
+				lastActionTime = Time.time;
+			actionAllowed = false;
+				//check colliding
+				Interact();
 		}
 
+		if (Time.time > lastActionTime + actionCooldown && !actionAllowed) {
+			actionAllowed = true;
+		playerAnimator.runtimeAnimatorController = null; 
+		playerHeadSpriteRenderer.sprite = neutralFace;
+		playerSpriteRenderer.sprite = neutralBody; 
+
+	}
 		levelTime += Time.deltaTime; 
 
 	}
@@ -105,9 +117,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		collided = null;
 		closestInteractiveDistance = 0f; 
-		playerAnimator.runtimeAnimatorController = null; 
-		playerHeadSpriteRenderer.sprite = neutralFace;
-		playerSpriteRenderer.sprite = neutralBody; 
+
 	}
 
 	private void Interact()
