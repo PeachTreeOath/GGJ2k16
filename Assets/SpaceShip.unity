@@ -1047,13 +1047,6 @@ Prefab:
       propertyPath: timeRange
       value: 0.25
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 11446482, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
-      propertyPath: head
-      value: 
-      objectReference: {fileID: 1058984366}
-    m_RemovedComponents: []
-=======
     - target: {fileID: 21278866, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
       propertyPath: m_Sprite
       value: 
@@ -1084,17 +1077,16 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11446482, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 1058984368}
     m_RemovedComponents:
     - {fileID: 5839944, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
->>>>>>> origin/master
   m_ParentPrefab: {fileID: 100100000, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1058984366 stripped
 GameObject:
-<<<<<<< HEAD
-  m_PrefabParentObject: {fileID: 135848, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
-  m_PrefabInternal: {fileID: 1058984365}
-=======
   m_PrefabParentObject: {fileID: 182576, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
   m_PrefabInternal: {fileID: 1058984365}
 --- !u!61 &1058984367
@@ -1111,7 +1103,27 @@ BoxCollider2D:
   m_Offset: {x: -0.0031140447, y: -0.16815841}
   serializedVersion: 2
   m_Size: {x: 0.8016663, y: 1.0240338}
->>>>>>> origin/master
+--- !u!1 &1058984368 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 135848, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
+  m_PrefabInternal: {fileID: 1058984365}
+--- !u!95 &1058984369
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1058984366}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1127283666
 GameObject:
   m_ObjectHideFlags: 0

@@ -140,7 +140,7 @@ public class PlayerScript : MonoBehaviour {
 		} else if (level == 1) {
 			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/CaveBody");
 		} else if (level == 2) {
-			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/AlienBody");
+			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/Alien");
 		}
 
 		if (inTimeRange) {

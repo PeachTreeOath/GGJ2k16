@@ -541,13 +541,6 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 11446482, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
-      propertyPath: head
-      value: 
-      objectReference: {fileID: 566997330}
-    m_RemovedComponents: []
-=======
     - target: {fileID: 21269090, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
       propertyPath: m_Sprite
       value: 
@@ -578,17 +571,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.175
       objectReference: {fileID: 0}
+    - target: {fileID: 11446482, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 1253769380}
     m_RemovedComponents:
     - {fileID: 5839944, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
->>>>>>> origin/master
   m_ParentPrefab: {fileID: 100100000, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &566997330 stripped
 GameObject:
-<<<<<<< HEAD
-  m_PrefabParentObject: {fileID: 135848, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
-  m_PrefabInternal: {fileID: 566997329}
-=======
   m_PrefabParentObject: {fileID: 182576, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
   m_PrefabInternal: {fileID: 566997329}
 --- !u!61 &566997331
@@ -605,7 +597,23 @@ BoxCollider2D:
   m_Offset: {x: 0.006740173, y: -0.11978897}
   serializedVersion: 2
   m_Size: {x: 0.40651977, y: 0.9134614}
->>>>>>> origin/master
+--- !u!95 &566997332
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 566997330}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &588553503
 Prefab:
   m_ObjectHideFlags: 0
@@ -1253,6 +1261,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1253769380 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 135848, guid: dc2e7460376a6f44287fc0cdf2c781a6, type: 2}
+  m_PrefabInternal: {fileID: 566997329}
 --- !u!1 &1347419697
 GameObject:
   m_ObjectHideFlags: 0

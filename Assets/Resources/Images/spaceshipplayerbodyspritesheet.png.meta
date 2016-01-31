@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 4c8e6508102292f4e97dd3c244efd397
-timeCreated: 1454190462
+timeCreated: 1454204600
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spaceshipplayerbodyspritesheet_0
+    21300002: spaceshipplayerbodyspritesheet_1
+    21300004: spaceshipplayerbodyspritesheet_2
+    21300006: spaceshipplayerbodyspritesheet_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,147 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: spaceshipplayerbodyspritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 36}
+        - {x: -35, y: 19}
+        - {x: -35, y: -72}
+        - {x: -29, y: -73}
+        - {x: 53, y: -73}
+        - {x: 56, y: -55}
+        - {x: 56, y: 17}
+        - {x: 41, y: 36}
+    - name: spaceshipplayerbodyspritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: -71}
+        - {x: -33, y: -73}
+        - {x: -27, y: -73}
+        - {x: -27, y: -71}
+        - {x: -29, y: -69}
+        - {x: -31, y: -69}
+      - - {x: 55, y: -38}
+        - {x: 53, y: -32}
+        - {x: 56, y: -19}
+        - {x: 56, y: 8}
+        - {x: 40, y: 35}
+        - {x: -23, y: 35}
+        - {x: -45, y: 4}
+        - {x: -45, y: -69}
+        - {x: -7, y: -73}
+        - {x: 1, y: -73}
+        - {x: 13, y: -58}
+        - {x: 16, y: -72}
+        - {x: 18, y: -73}
+        - {x: 31, y: -73}
+        - {x: 42, y: -66}
+        - {x: 52, y: -53}
+        - {x: 56, y: -45}
+    - name: spaceshipplayerbodyspritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: -71}
+        - {x: -37, y: -73}
+        - {x: -31, y: -73}
+        - {x: -31, y: -71}
+        - {x: -33, y: -69}
+        - {x: -35, y: -69}
+      - - {x: 55, y: -38}
+        - {x: 53, y: -32}
+        - {x: 56, y: -19}
+        - {x: 56, y: 8}
+        - {x: 40, y: 35}
+        - {x: -30, y: 35}
+        - {x: -52, y: 10}
+        - {x: -52, y: -38}
+        - {x: -37, y: -73}
+        - {x: 1, y: -73}
+        - {x: 13, y: -58}
+        - {x: 16, y: -72}
+        - {x: 18, y: -73}
+        - {x: 31, y: -73}
+        - {x: 42, y: -66}
+        - {x: 52, y: -53}
+        - {x: 56, y: -45}
+      - - {x: 53, y: -57}
+        - {x: 55, y: -59}
+        - {x: 56, y: -59}
+        - {x: 56, y: -51}
+        - {x: 53, y: -52}
+      - - {x: -27, y: -40}
+        - {x: -25, y: -42}
+        - {x: -22, y: -41}
+        - {x: -22, y: -38}
+        - {x: -24, y: -36}
+        - {x: -27, y: -37}
+    - name: spaceshipplayerbodyspritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: -71}
+        - {x: -33, y: -73}
+        - {x: -27, y: -73}
+        - {x: -27, y: -71}
+        - {x: -29, y: -69}
+        - {x: -31, y: -69}
+      - - {x: 55, y: -38}
+        - {x: 53, y: -32}
+        - {x: 56, y: -19}
+        - {x: 56, y: 8}
+        - {x: 40, y: 35}
+        - {x: -48, y: 35}
+        - {x: -53, y: 32}
+        - {x: -53, y: 2}
+        - {x: -25, y: -34}
+        - {x: -20, y: -37}
+        - {x: -21, y: -36}
+        - {x: -24, y: -35}
+        - {x: -30, y: -40}
+        - {x: -34, y: -52}
+        - {x: -34, y: -59}
+        - {x: -31, y: -65}
+        - {x: -2, y: -73}
+        - {x: 1, y: -73}
+        - {x: 13, y: -58}
+        - {x: 16, y: -72}
+        - {x: 18, y: -73}
+        - {x: 31, y: -73}
+        - {x: 42, y: -66}
+        - {x: 52, y: -53}
+        - {x: 56, y: -45}
     outline: []
   spritePackingTag: 
   userData: 
