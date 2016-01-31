@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -98}
-  m_SizeDelta: {x: 400, y: 150}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &676200760
 MonoBehaviour:
@@ -194,7 +194,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Having successfully followed the rituals of a Japanese Tea Ceremony, your
+    form changes to that of an Austolopithicus human neanderthal. Now, the stakes
+    are higher. You must unravel the traditions of a prehistoric human to survive
+    through the day. It would be wise to set a trap to catch food to eat later in
+    the day. '
 --- !u!222 &676200761
 CanvasRenderer:
   m_ObjectHideFlags: 0

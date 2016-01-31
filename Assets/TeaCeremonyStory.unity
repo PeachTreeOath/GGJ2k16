@@ -178,7 +178,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -98}
-  m_SizeDelta: {x: 400, y: 150}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310557130
 MonoBehaviour:
@@ -212,7 +212,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "Currently, you are inhabiting the form of a Japanese Geisha in a tea ceremony.
+    \rAt 4a.m, sip some tea, at 1p.m. the ceremony will begin, first with the removal
+    of your shoes upon entry. Then the gong must be rung, and you must wash your face
+    and hands. \r\nUse the AWSD or Arrow Keys to Move, and the Space Bar to Interact
+    or Proceed through screens. "
 --- !u!222 &310557131
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -529,7 +533,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -178.8}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365307207

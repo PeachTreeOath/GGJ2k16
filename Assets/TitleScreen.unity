@@ -310,7 +310,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'You are a transforming creature, and you find yourself in a foreign world.
+    You must uncover the traditions of this world, and their peculiarities such as
+    when they occur, to get back home. '
 --- !u!222 &797823083
 CanvasRenderer:
   m_ObjectHideFlags: 0
