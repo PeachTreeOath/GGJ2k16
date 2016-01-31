@@ -151,7 +151,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'You feel yourself changing from a neanderthal back to your true form. Home
+    again, you''ve spent so much time among humans that now you must reacclimate yourself
+    to your own culture, or be killed.  '
 --- !u!222 &321744319
 CanvasRenderer:
   m_ObjectHideFlags: 0
