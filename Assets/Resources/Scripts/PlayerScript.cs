@@ -52,17 +52,17 @@ public class PlayerScript : MonoBehaviour {
 		playerHeadSpriteRenderer = head.GetComponent<SpriteRenderer> (); 
 		level = Application.loadedLevel; 
 
-		if (level == 0) {
+		if (level == 2) {
 			happyFace = Resources.Load <Sprite> ("Images/teahouseplayerhappyhead");
 			frownFace =  Resources.Load <Sprite>("Images/teahouseplayerfrownhead");
 			neutralFace = Resources.Load <Sprite>("Images/teahouseplayerneutralhead");
 			neutralBody = Resources.Load <Sprite>("Images/teahouseplayerbody");
-		} else if (level == 1) {
+		} else if (level == 4) {
 			happyFace = Resources.Load <Sprite>("Images/wildernessplayerhappyhead");
 			frownFace = Resources.Load <Sprite>("Images/wildernessplayerfrownhead");
 			neutralFace = Resources.Load <Sprite>("Images/wildernessplayerneutralhead");
 			neutralBody = Resources.Load <Sprite>("Images/wildernessplayerbody");
-		} else if (level == 2) {
+		} else if (level == 6) {
 			happyFace = Resources.Load <Sprite>("Images/spaceshipplayerhappyhead");
 			frownFace = Resources.Load <Sprite>("Images/spaceshipplayerfrownhead");
 			neutralFace = Resources.Load <Sprite>("Images/spaceshipplayerneutralhead");
@@ -145,11 +145,11 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		
-		if (level == 0) {
+		if (level == 2) {
 			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/Kimono"); 
-		} else if (level == 1) {
+		} else if (level == 4) {
 			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/CaveBody");
-		} else if (level == 2) {
+		} else if (level == 6) {
 			playerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load ("Animations/Alien");
 		}
 
