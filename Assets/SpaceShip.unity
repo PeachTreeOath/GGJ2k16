@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f9e33323824374bb6c9e55b5721636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 0
+  targetTime: 1
   actionText: You fired the raygun!
 --- !u!1 &162201802
 GameObject:
@@ -649,7 +649,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -915,7 +915,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
@@ -1386,6 +1386,10 @@ Prefab:
       propertyPath: actionText
       value: You confirmed the biometrics on the incubator.
       objectReference: {fileID: 0}
+    - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
+      propertyPath: targetTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
   m_IsPrefabParent: 0
@@ -1475,7 +1479,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: actionText
@@ -1541,7 +1545,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11454674, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: targetTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6195454, guid: 1477a2e5159d9c64987f46942cec60e1, type: 2}
       propertyPath: m_IsTrigger
