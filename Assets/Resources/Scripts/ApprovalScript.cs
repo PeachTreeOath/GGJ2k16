@@ -28,7 +28,8 @@ public class ApprovalScript : MonoBehaviour {
 			transform.position = new Vector2 (origPos.x + (width / 2 * percent), origPos.y);
 			transform.localScale = new Vector2 (percent, 2); 
 		}
-		if (percent > 0f && addMinutes != 0f) {
+		float addMinutes2 = (float) addMinutes;
+		if (percent > 0f && addMinutes2 != 0f) {
 			transform.localScale = new Vector2(percent + addMinutes, 2);
 		}
 	}
